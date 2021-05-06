@@ -26,7 +26,6 @@
     "eslint-plugin-prettier": "3.4.0",
     "eslint-plugin-react-hooks": "4.2.0",
     "fontfaceobserver": "2.1.0",
-    "husky": "6.0.0",
     "i18next": "20.2.2",
     "i18next-browser-languagedetector": "6.1.0",
     "i18next-scanner": "3.0.0",
@@ -101,11 +100,6 @@
     "*.{md,json}": [
       "prettier --write"
     ]
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "yarn run checkTs && lint-staged"
-    }
   },
   "jest": {
     "collectCoverageFrom": [
