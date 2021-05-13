@@ -94,8 +94,7 @@ export const HomePage: FunctionComponent = () => {
   return (
     <>
       <Helmet>
-        <title>Home Page</title>
-        <meta name="description" content="A Boilerplate application homepage" />
+        <title>Home</title>
       </Helmet>
       <Section>
         <Wrapper className="intro">

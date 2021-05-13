@@ -21,11 +21,14 @@ export function App() {
   return (
     <BrowserRouter>
       <Helmet
-        titleTemplate="%s - Adam Norbäcker"
+        titleTemplate="Adam Norbäcker - %s"
         defaultTitle="Adam Norbäcker"
         htmlAttributes={{ lang: i18n.language }}
       >
-        <meta name="description" content="A React Boilerplate application" />
+        <meta
+          name="description"
+          content="Adam Norbäcker - Frontend developer"
+        />
       </Helmet>
 
       <Switch>
