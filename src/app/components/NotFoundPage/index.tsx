@@ -1,9 +1,9 @@
-import * as React from 'react';
+import React, { FunctionComponent } from 'react';
 import styled from 'styled-components/macro';
 import { P } from './P';
 import { Helmet } from 'react-helmet-async';
 
-export const NotFoundPage = () => {
+export const NotFoundPage: FunctionComponent = () => {
   return (
     <>
       <Helmet>
@@ -25,7 +25,7 @@ export const NotFoundPage = () => {
 };
 
 const Wrapper = styled.div`
-  height: 100vh;
+  height: calc(100vh - 60px);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -34,9 +34,8 @@ const Wrapper = styled.div`
 `;
 
 const Title = styled.div`
-  margin-top: -8vh;
-  font-weight: bold;
-  color: black;
+  font-weight: 700;
+  color: #d79921;
   font-size: 3.375rem;
 
   span {

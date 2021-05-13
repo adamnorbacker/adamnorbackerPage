@@ -4,13 +4,12 @@ import styled from 'styled-components';
 import Particles, { ParticlesProps } from 'react-particles-js';
 
 const Title = styled.h1`
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  text-transform: uppercase;
-  opacity: 0.1;
-  font-size: 8rem;
+  font-size: 14rem;
+
+  @media (max-width: 600px) {
+    font-size: 4rem;
+    text-align: center;
+  }
 `;
 
 const height = window.innerHeight - 60;
@@ -19,9 +18,48 @@ const Wrapper = styled.div`
   height: ${height}px;
   width: ${width}px;
   overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 `;
 
 const Section = styled.section``;
+
+const ParticleWrapper = styled.div`
+  position: absolute;
+  height: ${height}px;
+  width: ${width}px;
+  overflow: hidden;
+  z-index: 99;
+`;
+
+const FirstName = styled.span``;
+const LastName = styled.span``;
+
+const Divider = styled.div`
+  width: 100%;
+  border: #d79921 solid 0.7rem;
+`;
+const Profession = styled.h2`
+  font-size: 6rem;
+  margin-top: 3rem;
+  @media (max-width: 600px) {
+    margin-top: 0.7rem;
+    font-size: 4rem;
+  }
+`;
+
+const TextWrapper = styled.div`
+  text-transform: uppercase;
+  color: #d79921;
+  opacity: 0.2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-family: 'Raleway', sans-serif;
+`;
 
 export const HomePage: FunctionComponent = () => {
   const options: ParticlesProps['params'] = {
@@ -34,7 +72,7 @@ export const HomePage: FunctionComponent = () => {
         },
       },
       color: {
-        value: '#fff',
+        value: '#d79921',
       },
       shape: {
         type: 'circle',
@@ -57,7 +95,7 @@ export const HomePage: FunctionComponent = () => {
         },
       },
       size: {
-        value: 2,
+        value: 3,
         random: true,
         anim: {
           enable: true,
@@ -97,9 +135,17 @@ export const HomePage: FunctionComponent = () => {
         <title>Home</title>
       </Helmet>
       <Section>
-        <Wrapper className="intro">
-          <Title>Adam Norbäcker</Title>
-          <Particles params={options} />
+        <Wrapper>
+          <TextWrapper>
+            <Title>
+              <FirstName>Adam</FirstName> <LastName>Norbäcker</LastName>
+            </Title>
+            <Divider />
+            <Profession>Developer</Profession>
+          </TextWrapper>
+          <ParticleWrapper>
+            <Particles width="100vw" height="100vh" params={options} />
+          </ParticleWrapper>
         </Wrapper>
       </Section>
     </>
