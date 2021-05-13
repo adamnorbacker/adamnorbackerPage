@@ -4,6 +4,10 @@ import resets from './main.module.css';
 export const GlobalStyle = createGlobalStyle`
   ${resets}
 
+  html {
+    height: -webkit-fill-available;
+  }
+
   html,
   body {
     height: 100%;
@@ -15,6 +19,8 @@ export const GlobalStyle = createGlobalStyle`
     background: #d79921;
     color:#fff;
     padding: 2rem 0 0 2rem;
+    min-height: 100vh;
+    min-height: -webkit-fill-available;
   }
 
   #root {
