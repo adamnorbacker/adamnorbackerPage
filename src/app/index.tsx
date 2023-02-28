@@ -1,11 +1,9 @@
-import React, { FunctionComponent } from 'react';
+import { FunctionComponent } from 'react';
 import { Helmet } from 'react-helmet-async';
-import { Switch, Route, BrowserRouter } from 'react-router-dom';
+import { BrowserRouter } from 'react-router-dom';
 
 import { GlobalStyle } from 'styles/global-styles';
-
-import { HomePage } from './pages/HomePage/Loadable';
-import { NotFoundPage } from './components/NotFoundPage/Loadable';
+import { Home } from './pages/Loadable';
 
 export const App: FunctionComponent = () => {
   return (
@@ -17,10 +15,7 @@ export const App: FunctionComponent = () => {
         />
       </Helmet>
       <article>
-        <Switch>
-          <Route exact path="/" component={HomePage} />
-          <Route component={NotFoundPage} />
-        </Switch>
+        <Home />
       </article>
       <GlobalStyle />
     </BrowserRouter>
